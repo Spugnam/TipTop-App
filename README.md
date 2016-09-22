@@ -29,7 +29,7 @@ I intend to keep improving my app.
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/JpEsDi9.gifv' />
+<img src='http://i.imgur.com/JpEsDi9.gif' />
 
 http://i.imgur.com/JpEsDi9.gifv
 
