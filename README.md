@@ -30,6 +30,7 @@ I intend to keep improving my app.
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/JpEsDi9.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+http://i.imgur.com/JpEsDi9.gifv
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
