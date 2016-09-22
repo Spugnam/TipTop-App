@@ -33,6 +33,8 @@ Here's a walkthrough of implemented user stories:
 
 http://i.imgur.com/JpEsDi9.gifv
 
+![alt text](http://i.imgur.com/JpEsDi9.gifv "Demo")
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## The 2 LiceCap user stories are loaded with the project files for viewing
