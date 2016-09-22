@@ -33,8 +33,6 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-## The 2 LiceCap user stories are loaded with the project files for viewing
-
 Describe any challenges encountered while building the app.
 
 Challenges: I struggled to activate the persistence on the segmented control. I thought I had to find a different property to
