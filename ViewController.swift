@@ -33,6 +33,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Background
+        self.title = "Tip Calculator"
+
+        
         // Recall last default tip selection
         let defaults = UserDefaults.standard
         let defaultTipSelection = defaults.integer(forKey: "Tip_key")
