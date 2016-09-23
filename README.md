@@ -4,7 +4,7 @@ TipTop is a tip calculator application for iOS.
 
 Submitted by: **Quentin Picard**
 
-Time spent: 5 hours spent in total
+Time spent: 8 hours spent in total
 
 ## User Stories
 
@@ -14,16 +14,14 @@ The following **required** functionality is complete:
 * [x] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
-* [ ] UI animations
+* [x] UI animations
 * [ ] Remembering the bill amount across app restarts (if <10mins)
-* [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Using locale-specific currency and currency thousands separators.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
-
-I intend to keep improving my app.
 
 ## Video Walkthrough 
 
@@ -37,8 +35,10 @@ Describe any challenges encountered while building the app.
 
 Challenges: I struggled to activate the persistence on the segmented control. I thought I had to find a different property to
 force the % manually but selectedSegmentIndex worked fine.
-I struggled to publish my project on Github. For some reason the publishing was failing. Turns out I had an empty project online
-with the same name I was trying to use blocking the upload. 
+I struggled to publish my project on Github (new tool for me although I'm familiar with version management). Turns out I had an empty project online with the same name blocking the upload. 
+I added the local currency format for the tip and full amount, but I couldn't do it for the bill textfield (it makes the conversion to a Double fail and return 0). I found a fix online but it seemed complex and I didn't get to it.
+I can call the settings view with a left swipe, but the right swipe to come back crashes the app. This was Swipe Gesture. Pan Gesture I couldn't get to work. My code never gets triggered.
+I couldn't figure out NSDate to add the timer for the bill amount. I need more time on this
 
 ## License
 
