@@ -16,18 +16,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipPercentageControl: UISegmentedControl!
     
+    // This Right Pan is never called
+    @IBAction func onRightPanGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
+        if let resultController = storyboard!.instantiateViewController(withIdentifier: "settingsStoryboard") as? SettingsViewController {
+            present(resultController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func onSwipe(_ sender: UISwipeGestureRecognizer) {
+        if let resultController = storyboard!.instantiateViewController(withIdentifier: "settingsStoryboard") as? SettingsViewController {
+            present(resultController, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Recall last default tip selection
         let defaults = UserDefaults.standard
         let defaultTipSelection = defaults.integer(forKey: "Tip_key")
         tipPercentageControl.selectedSegmentIndex = defaultTipSelection
+        
+        //Remember bill amount for 3 mins
+        
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // Select bill field by default so user can start typing
+        billField.becomeFirstResponder()
+        
         let defaults = UserDefaults.standard
         let defaultTipSelection = defaults.integer(forKey: "Tip_key")
         tipPercentageControl.selectedSegmentIndex = defaultTipSelection
@@ -50,8 +71,9 @@ class ViewController: UIViewController {
         let tip = bill * tipPercentages[tipPercentageControl.selectedSegmentIndex]
         let total = bill + tip
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = String(format: "$%.2f", locale: NSLocale.current, tip)
+        totalLabel.text = String(format: "$%.2f", locale: NSLocale.current, total)
+
     }
 }
 

@@ -13,20 +13,32 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var defaultTipControl: UISegmentedControl!
     
+    @IBAction func onSwipeSettings(_ sender: UISwipeGestureRecognizer) {
+        if let resultController = storyboard!.instantiateViewController(withIdentifier: "mainStoryboard") as? ViewController {
+            present(resultController, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //defaultTipControl.
         // Do any additional setup after loading the view.
         let defaults = UserDefaults.standard
         let defaultTipSelection = defaults.integer(forKey: "Tip_key")
         defaultTipControl.selectedSegmentIndex = defaultTipSelection
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view.backgroundColor = UIColor.lightGray
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func setDefaultTip(_ sender: AnyObject) {
         

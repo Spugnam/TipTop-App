@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipTop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainStoryBoard" id="BYZ-38-t0r" customClass="ViewController" customModule="TipTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="k3g-On-IfM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="k3g-On-IfM">
                                 <frame key="frameInset" minX="203" minY="95" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -77,6 +77,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="P8J-hp-vfC" appends="YES" id="A9c-Oi-CCg"/>
+                            <outletCollection property="gestureRecognizers" destination="8mP-JH-S6d" appends="YES" id="cAH-67-yXP"/>
                         </connections>
                     </view>
                     <toolbarItems>
@@ -105,13 +106,24 @@
                         <action selector="onTap:" destination="BYZ-38-t0r" id="bFc-Z2-1cN"/>
                     </connections>
                 </tapGestureRecognizer>
+                <screenEdgePanGestureRecognizer id="eZk-qz-dim">
+                    <connections>
+                        <action selector="onRightPanGesture:" destination="BYZ-38-t0r" id="y2c-bA-x8n"/>
+                        <outlet property="delegate" destination="8bC-Xf-vdC" id="kDl-iJ-GJs"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="8mP-JH-S6d">
+                    <connections>
+                        <action selector="onSwipe:" destination="BYZ-38-t0r" id="xO4-3W-gpM"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="672.5" y="154.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="L3S-PV-ovh">
             <objects>
-                <viewController id="0h9-tK-GFo" customClass="SettingsViewController" customModule="TipTop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsStoryboard" id="0h9-tK-GFo" customClass="SettingsViewController" customModule="TipTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBq-ON-fDo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +135,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ozI-wG-hJe">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ozI-wG-hJe">
                                 <frame key="frameInset" minX="36" minY="163" width="303" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -139,6 +151,10 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="U4H-To-rbc" appends="YES" id="kK6-XF-g2O"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="G0Q-Fm-kP1"/>
                     <connections>
@@ -146,8 +162,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hll-eI-KtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="U4H-To-rbc">
+                    <connections>
+                        <action selector="onSwipeSettings:" destination="0h9-tK-GFo" id="LwS-AX-PxR"/>
+                        <outlet property="delegate" destination="IBq-ON-fDo" id="swM-13-tr7"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1115.5" y="154.5"/>
+            <point key="canvasLocation" x="673" y="1048"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XEp-jO-2Xb">
